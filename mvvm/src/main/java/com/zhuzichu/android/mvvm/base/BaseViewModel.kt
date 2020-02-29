@@ -107,4 +107,7 @@ abstract class BaseViewModel<TArg : BaseArg> : ViewModel(),
     override fun initLazyData() {}
 
     override fun initLazyView() {}
+
+    override fun initListener() {}
+
 }

@@ -111,9 +111,7 @@
 
 # 数据层
 -keep class **.entity.** { *;}
-
-# modle
--keep class **.paramModel.** { *;}
+-keep class **.arg.** { *;}
 
 -libraryjars <java.home>/lib/rt.jar(java/**,javax/security/**,javax/activation/**,javax/lang/**)
 

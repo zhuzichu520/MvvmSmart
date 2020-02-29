@@ -64,6 +64,7 @@ abstract class BaseFragment<TBinding : ViewDataBinding, TViewModel : BaseViewMod
         registUIChangeLiveDataCallback()
         initVariable()
         initView()
+        initListener()
         initViewObservable()
         initData()
         if (!viewModel.isInitData) {
@@ -207,5 +208,9 @@ abstract class BaseFragment<TBinding : ViewDataBinding, TViewModel : BaseViewMod
 
     override fun initLazyView() {
         viewModel.initLazyView()
+    }
+
+    override fun initListener() {
+        viewModel.initListener()
     }
 }

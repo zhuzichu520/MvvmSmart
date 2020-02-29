@@ -10,6 +10,8 @@ interface IBaseView<TArg : BaseArg> {
 
     fun initView()
 
+    fun initListener()
+
     fun initData()
 
     fun initFirstData()

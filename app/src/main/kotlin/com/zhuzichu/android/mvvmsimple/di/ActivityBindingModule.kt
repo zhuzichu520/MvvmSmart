@@ -8,7 +8,8 @@ import com.zhuzichu.android.mvvmsimple.ui.detail.activity.ActivityDetail
 import com.zhuzichu.android.mvvmsimple.ui.detail.module.ModuleDetail
 import com.zhuzichu.android.mvvmsimple.ui.home.module.ModuleHome
 import com.zhuzichu.android.mvvmsimple.ui.main.module.ModuleMain
-import com.zhuzichu.android.mvvmsimple.ui.me.model.ModuleMe
+import com.zhuzichu.android.mvvmsimple.ui.me.module.ModuleMe
+import com.zhuzichu.android.mvvmsimple.ui.theme.module.ModuleTheme
 
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
@@ -25,7 +26,8 @@ abstract class ActivityBindingModule {
             ModuleCategory::class,
             ModuleMe::class,
             ModuleDemo::class,
-            ModuleDetail::class
+            ModuleDetail::class,
+            ModuleTheme::class
         ]
     )
     internal abstract fun mainActivity(): ActivityMain
@@ -33,12 +35,6 @@ abstract class ActivityBindingModule {
     @ActivityScoped
     @ContributesAndroidInjector(
         modules = [
-            //fragments
-            ModuleMain::class,
-            ModuleHome::class,
-            ModuleCategory::class,
-            ModuleMe::class,
-            ModuleDemo::class,
             ModuleDetail::class
         ]
     )

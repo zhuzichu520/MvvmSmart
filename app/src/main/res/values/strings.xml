@@ -2,11 +2,22 @@
 
     <string name="app_name">MvvmSimple</string>
 
-    <string name="press_again_to_exit">Press once again to exit</string>
+    <string name="press_again_to_exit">再按一次退出</string>
 
-    <string name="home">Home</string>
-    <string name="me">Me</string>
-    <string name="category">Category</string>
+    <string name="home">首页</string>
+    <string name="me">我</string>
+    <string name="category">分类</string>
     <string name="demo">Demo</string>
+
+    <string name="settings_theme_system">系统默认</string>
+    <string name="settings_theme_light">浅色</string>
+    <string name="settings_theme_dark">深色</string>
+    <string name="settings_theme_battery">根据省电模式设置</string>
+
+
+    <string name="cat_choose_theme_label">Choose theme</string>
+    <string name="cat_choose_theme_light">Light</string>
+    <string name="cat_choose_theme_dark">Dark</string>
+    <string name="cat_choose_theme_default">System default</string>
 
 </resources>

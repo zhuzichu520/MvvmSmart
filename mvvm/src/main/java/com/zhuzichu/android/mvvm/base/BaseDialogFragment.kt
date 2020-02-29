@@ -23,13 +23,13 @@ import com.zhuzichu.android.mvvm.Mvvm.KEY_ARG_JSON
 import com.zhuzichu.android.mvvm.Mvvm.getDefaultNavOptions
 import com.zhuzichu.android.mvvm.R
 import com.zhuzichu.android.widget.dialog.loading.LoadingMaker
-import dagger.android.support.DaggerDialogFragment
+import dagger.android.support.DaggerAppCompatDialogFragment
 import java.lang.reflect.ParameterizedType
 import javax.inject.Inject
 
 
 abstract class BaseDialogFragment<TBinding : ViewDataBinding, TViewModel : BaseViewModel<TArg>, TArg : BaseArg> :
-    DaggerDialogFragment(), IBaseView<TArg>, IBaseCommon {
+    DaggerAppCompatDialogFragment(), IBaseView<TArg>, IBaseCommon {
 
     var binding: TBinding? = null
     lateinit var arg: TArg
@@ -65,6 +65,7 @@ abstract class BaseDialogFragment<TBinding : ViewDataBinding, TViewModel : BaseV
         registUIChangeLiveDataCallback()
         initVariable()
         initView()
+        initListener()
         initViewObservable()
         initData()
         if (!viewModel.isInitData) {
@@ -208,5 +209,9 @@ abstract class BaseDialogFragment<TBinding : ViewDataBinding, TViewModel : BaseV
 
     override fun initLazyView() {
         viewModel.initLazyView()
+    }
+
+    override fun initListener() {
+        viewModel.initListener()
     }
 }

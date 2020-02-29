@@ -20,15 +20,18 @@
         <action
             android:id="@+id/action_fragmentMain_to_dialogFragmentDetail"
             app:destination="@id/dialogFragmentDetail" />
+        <action
+            android:id="@+id/action_fragmentMain_to_dialogBottomFragmentDetail"
+            app:destination="@id/dialogBottomFragmentDetail" />
+        <action
+            android:id="@+id/action_fragmentMain_to_dialogFragmentChooseTheme"
+            app:destination="@id/dialogFragmentChooseTheme" />
     </fragment>
     <fragment
         android:id="@+id/fragmentDetail"
         android:name="com.zhuzichu.android.mvvmsimple.ui.detail.fragment.FragmentDetail"
         android:label="FragmentDetail"
         tools:layout="@layout/fragment_detail">
-        <action
-            android:id="@+id/action_fragmentDetail_to_fragmentMain"
-            app:destination="@id/fragmentMain" />
         <deepLink app:uri="https://www.zhuzichu.com/content/{argJson}" />
         <argument
             android:name="argJson"
@@ -38,14 +41,18 @@
         android:id="@+id/activityDetail"
         android:name="com.zhuzichu.android.mvvmsimple.ui.detail.activity.ActivityDetail"
         android:label="ActivityDetail"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_detail" />
     <dialog
         android:id="@+id/dialogFragmentDetail"
         android:name="com.zhuzichu.android.mvvmsimple.ui.detail.dialog.DialogFragmentDetail"
         android:label="DialogFragmentDetail"
-        tools:layout="@layout/fragment_detail">
-        <action
-            android:id="@+id/action_dialogFragmentDetail_to_fragmentMain"
-            app:destination="@id/fragmentMain" />
-    </dialog>
+        tools:layout="@layout/fragment_detail" />
+    <dialog
+        android:id="@+id/dialogBottomFragmentDetail"
+        android:name="com.zhuzichu.android.mvvmsimple.ui.detail.dialog.DialogBottomFragmentDetail"
+        android:label="DialogBottomFragmentDetail" />
+    <dialog
+        android:id="@+id/dialogFragmentChooseTheme"
+        android:name="com.zhuzichu.android.mvvmsimple.ui.theme.fragment.DialogFragmentChooseTheme"
+        android:label="DialogFragmentChooseTheme" />
 </navigation>

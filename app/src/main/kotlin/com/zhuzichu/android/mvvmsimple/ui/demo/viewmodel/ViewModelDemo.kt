@@ -32,6 +32,14 @@ class ViewModelDemo @Inject constructor() : BaseViewModel<DefaultArg>() {
         )
     }
 
+    val onStartDialogBottomFragmentEvent = createCommand {
+        //        start(
+//            R.id.action_fragmentMain_to_dialogBottomFragmentDetail,
+//            ArgText("DialogBottomFragment 一页书:世事如棋，乾坤莫测，笑尽英雄啊！！")
+//        )
+        start(R.id.action_fragmentMain_to_dialogFragmentChooseTheme)
+    }
+
     val text = MutableLiveData<String>().apply {
         value = "点击Url跳转Activity：https://www.zhuzichu.com/content/".plus(
             encodeBase64(

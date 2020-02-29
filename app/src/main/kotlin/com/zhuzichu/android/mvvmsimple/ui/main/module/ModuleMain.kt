@@ -22,4 +22,5 @@ internal abstract class ModuleMain {
     @ViewModelKey(ViewModelMain::class)
     abstract fun viewModel(viewModel: ViewModelMain): ViewModel
 
+
 }

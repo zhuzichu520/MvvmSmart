@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.zhuzichu.android.mvvmsimple.ui.theme.viewmodel.ViewModelTheme" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:text="@string/cat_choose_theme_label" />
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/theme_toggle_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            app:checkedButton="@={viewModel.checkedButton}"
+            app:selectionRequired="true"
+            app:singleSelection="true">
+
+            <Button
+                android:id="@id/theme_light"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="0dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="12dp"
+                android:text="@string/cat_choose_theme_light"
+                app:icon="@drawable/ic_theme_light_24px"
+                app:iconPadding="4dp" />
+
+            <Button
+                android:id="@id/theme_dark"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="0dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="12dp"
+                android:text="@string/cat_choose_theme_dark"
+                app:icon="@drawable/ic_theme_dark_24px"
+                app:iconPadding="4dp" />
+
+
+            <Button
+                android:id="@id/theme_default"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="0dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="12dp"
+                android:text="@string/cat_choose_theme_default"
+                app:icon="@drawable/ic_theme_default_24px"
+                app:iconPadding="4dp" />
+
+
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+    </LinearLayout>
+</layout>

@@ -18,5 +18,4 @@ class ViewModelDetail @Inject constructor() : BaseViewModel<ArgText>() {
         content.value = arg.content
     }
 
-
 }

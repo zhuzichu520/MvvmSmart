@@ -1,4 +1,4 @@
-package com.zhuzichu.android.mvvmsimple.ui.me.model
+package com.zhuzichu.android.mvvmsimple.ui.me.module
 
 import androidx.lifecycle.ViewModel
 import com.zhuzichu.android.mvvm.di.ChildFragmentScoped

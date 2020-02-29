@@ -1,8 +1,8 @@
 package com.zhuzichu.android.mvvmsimple
 
-import com.zhuzichu.android.mvvm.base.BaseActivity
+import com.zhuzichu.android.mvvmsimple.base.ActivityBase
 
-class ActivityMain : BaseActivity() {
+class ActivityMain : ActivityBase() {
 
     override fun setNavGraph(): Int = R.navigation.navigation_main
 
