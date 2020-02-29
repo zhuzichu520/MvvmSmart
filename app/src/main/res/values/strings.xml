@@ -1,0 +1,12 @@
+<resources>
+
+    <string name="app_name">MvvmSimple</string>
+
+    <string name="press_again_to_exit">Press once again to exit</string>
+
+    <string name="home">Home</string>
+    <string name="me">Me</string>
+    <string name="category">Category</string>
+    <string name="demo">Demo</string>
+
+</resources>

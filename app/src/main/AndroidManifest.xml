@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.zhuzichu.android.mvvmsimple">
+
+    <application
+        android:name=".ApplicationSimple"
+        android:allowBackup="false"
+        android:fullBackupContent="false"
+        android:icon="${ic_launcher_new}"
+        android:label="@string/app_name_new"
+        android:roundIcon="${ic_launcher_round_new}"
+        android:supportsRtl="true"
+        android:theme="@style/MyTheme.DayNight"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:label,android:allowBackup">
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <meta-data
+            android:name="design_width_in_dp"
+            android:value="432" />
+        <meta-data
+            android:name="design_height_in_dp"
+            android:value="768" />
+
+        <activity
+            android:name=".ActivityMain">
+            <nav-graph android:value="@navigation/navigation_main" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".ui.detail.activity.ActivityDetail" />
+    </application>
+
+</manifest>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_main"
+    app:startDestination="@id/fragmentMain"
+    tools:ignore="UnusedNavigation">
+
+    <fragment
+        android:id="@+id/fragmentMain"
+        android:name="com.zhuzichu.android.mvvmsimple.ui.main.fragment.FragmentMain"
+        android:label="FragmentMain"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_fragmentMain_to_fragmentDetail"
+            app:destination="@id/fragmentDetail" />
+        <action
+            android:id="@+id/action_fragmentMain_to_activityDetail"
+            app:destination="@id/activityDetail" />
+        <action
+            android:id="@+id/action_fragmentMain_to_dialogFragmentDetail"
+            app:destination="@id/dialogFragmentDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentDetail"
+        android:name="com.zhuzichu.android.mvvmsimple.ui.detail.fragment.FragmentDetail"
+        android:label="FragmentDetail"
+        tools:layout="@layout/fragment_detail">
+        <action
+            android:id="@+id/action_fragmentDetail_to_fragmentMain"
+            app:destination="@id/fragmentMain" />
+        <deepLink app:uri="https://www.zhuzichu.com/content/{argJson}" />
+        <argument
+            android:name="argJson"
+            app:argType="string" />
+    </fragment>
+    <activity
+        android:id="@+id/activityDetail"
+        android:name="com.zhuzichu.android.mvvmsimple.ui.detail.activity.ActivityDetail"
+        android:label="ActivityDetail"
+        tools:layout="@layout/fragment_main" />
+    <dialog
+        android:id="@+id/dialogFragmentDetail"
+        android:name="com.zhuzichu.android.mvvmsimple.ui.detail.dialog.DialogFragmentDetail"
+        android:label="DialogFragmentDetail"
+        tools:layout="@layout/fragment_detail">
+        <action
+            android:id="@+id/action_dialogFragmentDetail_to_fragmentMain"
+            app:destination="@id/fragmentMain" />
+    </dialog>
+</navigation>
