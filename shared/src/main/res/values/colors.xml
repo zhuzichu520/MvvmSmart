@@ -21,6 +21,7 @@
     <color name="color_font_primary">#333333</color>
     <color name="color_font_secondary">#666666</color>
     <color name="color_font_tertiary">#999999</color>
+    <color name="color_font_quaternary">#ffffff</color>
 
     <color name="color_divider">#e5e5e5</color>
 

@@ -11,4 +11,21 @@ object ThemeStorage {
     }
 
     var uiMode by IntPreference(prefs, defaultValue = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+
+    var primarColorIndex by IntPreference(
+        prefs,
+        defaultValue = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
+    )
+    var secondaryColorIndex by IntPreference(
+        prefs,
+        -1
+    )
+    var cornerFamilyIndex by IntPreference(
+        prefs,
+        -1
+    )
+    var cornerSizeIndex by IntPreference(
+        prefs,
+        -1
+    )
 }

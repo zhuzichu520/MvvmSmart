@@ -25,6 +25,7 @@ object AppGlobal {
         L.plant(ConsoleTree())
         L.plant(FileLoggingTree(FileLoggingSetup(context).withFolder(CacheGlobal.getLogCacheDir())))
         AppCompatDelegate.setDefaultNightMode(ThemeManager.getNightMode())
+        ThemeManager.initTheme(context)
         return this
     }
 

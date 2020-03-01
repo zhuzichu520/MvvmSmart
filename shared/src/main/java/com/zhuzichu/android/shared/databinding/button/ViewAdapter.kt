@@ -23,8 +23,9 @@ fun setOnCheckedButtonListener(
     bindingListener: InverseBindingListener?
 ) {
     bindingListener?.let {
-        toggleGroup.addOnButtonCheckedListener { _, _, _ ->
-            bindingListener.onChange()
+        toggleGroup.addOnButtonCheckedListener { _, _, isChecked ->
+            if (isChecked)
+                bindingListener.onChange()
         }
     }
 }
