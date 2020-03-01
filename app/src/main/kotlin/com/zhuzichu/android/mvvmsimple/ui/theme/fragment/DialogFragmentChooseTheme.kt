@@ -78,8 +78,8 @@ class DialogFragmentChooseTheme :
         shape_corner_sizes.setOnCheckedChangeListener(this)
 
         clear_button.setOnClickListener {
-            ThemeManager.clearThemeOverlays(requireActivity())
             dismiss()
+            ThemeManager.clearThemeOverlays(requireActivity())
         }
     }
 
