@@ -8,6 +8,7 @@ import android.widget.LinearLayout
 import android.widget.RadioGroup
 import androidx.annotation.*
 import androidx.appcompat.widget.AppCompatRadioButton
+import androidx.core.app.ActivityCompat
 import androidx.core.view.MarginLayoutParamsCompat
 import androidx.core.widget.CompoundButtonCompat
 import androidx.lifecycle.Observer
@@ -165,7 +166,7 @@ class DialogFragmentChooseTheme :
         for (i in themesMap.indices) {
             ThemeManager.setThemeOverlay(themesMap[i][0], themesMap[i][1])
         }
-        requireActivity().recreate()
+        ActivityCompat.recreate(requireActivity())
     }
 
     private fun getThemeOverlayResId(
