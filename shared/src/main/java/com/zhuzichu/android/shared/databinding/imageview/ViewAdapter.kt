@@ -4,30 +4,17 @@ import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
 import android.widget.ImageView
 import androidx.annotation.ColorInt
-import androidx.annotation.DrawableRes
 import androidx.databinding.BindingAdapter
-import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
-import com.zhuzichu.android.shared.R
-import com.zhuzichu.android.shared.global.GlideApp
+import com.facebook.drawee.view.SimpleDraweeView
 import com.zhuzichu.android.widget.sharp.Sharp
 
-@BindingAdapter(value = ["url", "fadeDuration", "error"], requireAll = false)
-fun bindImageViewByUrl(
-    imageView: ImageView,
-    url: Any?,
-    fadeDuration: Int,
-    @DrawableRes error: Int
+@BindingAdapter(value = ["url"], requireAll = false)
+fun bindSimpleDraweeView(
+    simpleDraweeView: SimpleDraweeView,
+    url: String?
 ) {
-    url?.apply {
-        GlideApp.with(imageView)
-            .load(this).also {
-                if (fadeDuration != 0) {
-                    it.transition(DrawableTransitionOptions.withCrossFade(fadeDuration))
-                }
-            }
-            .placeholder(R.drawable.ic_place_holder)
-            .error(error)
-            .into(imageView)
+    url?.let {
+        simpleDraweeView.setImageURI(url)
     }
 }
 

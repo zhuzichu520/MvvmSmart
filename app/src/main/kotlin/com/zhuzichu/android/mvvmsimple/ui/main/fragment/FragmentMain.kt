@@ -8,13 +8,13 @@ import com.zhuzichu.android.mvvmsimple.BR
 import com.zhuzichu.android.mvvmsimple.R
 import com.zhuzichu.android.mvvmsimple.databinding.FragmentMainBinding
 import com.zhuzichu.android.mvvmsimple.ui.category.fragment.FragmentCategory
-import com.zhuzichu.android.mvvmsimple.ui.demo.fragment.FragmentDemo
+import com.zhuzichu.android.mvvmsimple.ui.demo.main.fragment.FragmentDemo
 import com.zhuzichu.android.mvvmsimple.ui.home.fragment.FragmentHome
 import com.zhuzichu.android.mvvmsimple.ui.main.viewmodel.ViewModelMain
 import com.zhuzichu.android.mvvmsimple.ui.me.fragment.FragmentMe
 import com.zhuzichu.android.shared.base.DefaultIntFragmentPagerAdapter
-import com.zhuzichu.android.shared.extension.setupWithViewPager
-import com.zhuzichu.android.shared.extension.toast
+import com.zhuzichu.android.shared.ext.setupWithViewPager
+import com.zhuzichu.android.shared.ext.toast
 import kotlinx.android.synthetic.main.fragment_main.*
 
 class FragmentMain : BaseFragment<FragmentMainBinding, ViewModelMain, DefaultArg>() {

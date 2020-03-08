@@ -16,8 +16,8 @@ import androidx.annotation.NonNull
 import androidx.annotation.Nullable
 import androidx.annotation.RestrictTo
 import com.zhuzichu.android.libs.tool.toCast
-import com.zhuzichu.android.shared.extension.loge
-import com.zhuzichu.android.shared.extension.logi
+import com.zhuzichu.android.shared.ext.loge
+import com.zhuzichu.android.shared.ext.logi
 import java.io.*
 import java.lang.ref.WeakReference
 import java.text.DateFormat

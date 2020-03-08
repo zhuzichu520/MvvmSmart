@@ -9,7 +9,7 @@ object Dep {
         const val androidxCore = "1.1.0"
         const val androidxKtx = "1.2.0"
         const val androidxConstraintlayout = "2.0.0-beta4"
-        const val androidxNavigation = "2.2.0"
+        const val androidxNavigation = "2.2.1"
         const val material = "1.2.0-alpha05"
         const val retrofit = "2.5.0"
         const val okhttp = "3.12.0"
@@ -18,9 +18,8 @@ object Dep {
         const val rxbinding = "3.0.0"
         const val autodispose = "1.4.0"
         const val adapter = "3.1.1"
-        const val glide = "4.11.0"
         const val timber = "4.7.1"
-        const val swiperefreshlayout = "1.1.0-alpha03"
+        const val swiperefreshlayout = "1.1.0-beta01"
         const val libs = "1.0.30"
         const val mvvm = "1.0.59"
         const val widget = "1.0.39"
@@ -49,7 +48,14 @@ object Dep {
         const val dialog = "3.3.0"
         const val pluginDcendents = "2.1"
         const val fastJson = "1.1.60.android"
+        const val fresco = "2.1.0"
     }
+
+    const val fresco =
+        "com.facebook.fresco:fresco:${Version.fresco}"
+
+    const val frescoGif =
+        "com.facebook.fresco:animated-gif:${Version.fresco}"
 
     const val daggerAndroid =
         "com.google.dagger:dagger-android:${Version.dagger}"
@@ -218,15 +224,6 @@ object Dep {
 
     const val adapterRecyclerview =
         "me.tatarka.bindingcollectionadapter2:bindingcollectionadapter-recyclerview:${Version.adapter}"
-
-    const val glideOkhttpIntegration =
-        "com.github.bumptech.glide:okhttp3-integration:${Version.glide}"
-
-    const val glide =
-        "com.github.bumptech.glide:glide:${Version.glide}"
-
-    const val kaptGlide =
-        "com.github.bumptech.glide:compiler:${Version.glide}"
 
     const val timber =
         "com.jakewharton.timber:timber:${Version.timber}"

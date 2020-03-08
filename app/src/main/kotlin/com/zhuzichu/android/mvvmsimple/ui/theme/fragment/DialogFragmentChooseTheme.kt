@@ -18,7 +18,7 @@ import com.zhuzichu.android.mvvmsimple.BR
 import com.zhuzichu.android.mvvmsimple.R
 import com.zhuzichu.android.mvvmsimple.databinding.DialogFragmentChooseThemeBinding
 import com.zhuzichu.android.mvvmsimple.ui.theme.viewmodel.ViewModelTheme
-import com.zhuzichu.android.shared.storage.ThemeStorage
+import com.zhuzichu.android.shared.theme.ThemeStorage
 import com.zhuzichu.android.shared.theme.ThemeManager
 import kotlinx.android.synthetic.main.dialog_fragment_choose_theme.*
 

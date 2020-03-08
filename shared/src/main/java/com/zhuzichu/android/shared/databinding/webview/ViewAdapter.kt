@@ -2,7 +2,7 @@ package com.zhuzichu.android.shared.databinding.webview
 
 import android.webkit.WebView
 import androidx.databinding.BindingAdapter
-import com.zhuzichu.android.shared.extension.isDark
+import com.zhuzichu.android.shared.ext.isDark
 
 @BindingAdapter(value = ["webReadme"], requireAll = false)
 fun bindWebView(webView: WebView, webData: String?) {

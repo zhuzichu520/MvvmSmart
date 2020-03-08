@@ -6,35 +6,38 @@ import java.io.File
 
 object CacheGlobal {
 
-    private const val CACHE_GLIDE_DIR = "/cache_glide"
+    const val CACHE_FRESCO_FILE_NAME = "cache_fresco"
 
-    private const val CACHE_MMKV_DIR = "/cache_mmkv"
+    private const val CACHE_MMKV_FILE_NAME = "cache_mmkv"
 
-    private const val CACHE_LOG_DIR = "/cache_log"
+    private const val CACHE_LOG_FILE_NAME = "cache_log"
 
     fun initDir() {
         getGlideCacheDir()
     }
 
     fun getLogCacheDir(): String {
-        return getDiskCacheDir(CACHE_LOG_DIR).absolutePath
+        return getDiskCacheDir(CACHE_LOG_FILE_NAME).absolutePath
     }
 
     fun getMmkvCacheDir(): String {
-        return getDiskCacheDir(CACHE_MMKV_DIR).absolutePath
+        return getDiskCacheDir(CACHE_MMKV_FILE_NAME).absolutePath
     }
 
     fun getGlideCacheDir(): String {
-        return getDiskCacheDir(CACHE_GLIDE_DIR).absolutePath
+        return getDiskCacheDir(CACHE_FRESCO_FILE_NAME).absolutePath
+    }
+
+    fun getBaseDiskCacheDir(): File {
+        return if (isExternalStorageWriteable()) {
+            context.externalCacheDir!!
+        } else {
+            context.cacheDir
+        }
     }
 
     private fun getDiskCacheDir(last: String): File {
-        val path: String = if (isExternalStorageWriteable()) {
-            context.externalCacheDir.toString() + last
-        } else {
-            context.cacheDir.toString() + last
-        }
-        val file = File(path)
+        val file = File(getBaseDiskCacheDir().toString(), last)
         if (!file.exists()) {
             file.mkdirs()
         }

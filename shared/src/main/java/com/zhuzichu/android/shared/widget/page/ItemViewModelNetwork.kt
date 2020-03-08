@@ -1,13 +1,12 @@
 package com.zhuzichu.android.shared.widget.page
 
 import androidx.lifecycle.MutableLiveData
-import com.zhuzichu.android.mvvm.base.BaseArg
-import com.zhuzichu.android.mvvm.base.BaseViewModel
 import com.zhuzichu.android.mvvm.base.BaseItemViewModel
+import com.zhuzichu.android.mvvm.base.BaseViewModel
 import com.zhuzichu.android.mvvm.databinding.BindingCommand
 
 class ItemViewModelNetwork(
-    viewModel: BaseViewModel<BaseArg>,
+    viewModel: BaseViewModel<*>,
     val onClickRetry: BindingCommand<Any>
 ) : BaseItemViewModel(viewModel) {
     companion object {

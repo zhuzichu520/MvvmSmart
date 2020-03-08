@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView.SCROLL_STATE_IDLE
 import com.uber.autodispose.android.autoDispose
 import com.zhuzichu.android.libs.internal.MainHandler
 import com.zhuzichu.android.mvvm.databinding.BindingCommand
-import com.zhuzichu.android.shared.extension.bindToSchedulers
+import com.zhuzichu.android.shared.ext.bindToSchedulers
 import io.reactivex.Flowable
 import java.util.concurrent.TimeUnit
 

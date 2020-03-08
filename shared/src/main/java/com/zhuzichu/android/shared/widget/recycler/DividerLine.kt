@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView.ItemDecoration
 import com.zhuzichu.android.libs.tool.dp2px
 import com.zhuzichu.android.libs.tool.toFloat
 import com.zhuzichu.android.shared.R
-import com.zhuzichu.android.shared.extension.toColorByResId
+import com.zhuzichu.android.shared.ext.toColorByResId
 
 class DividerLine(
     val context: Context,

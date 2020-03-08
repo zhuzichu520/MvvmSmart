@@ -6,7 +6,6 @@ import android.util.SparseIntArray
 import androidx.annotation.*
 import androidx.appcompat.app.AppCompatDelegate
 import com.zhuzichu.android.shared.R
-import com.zhuzichu.android.shared.storage.ThemeStorage
 
 object ThemeManager {
 

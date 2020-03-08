@@ -3,7 +3,9 @@ package com.zhuzichu.android.mvvmsimple.di
 import com.zhuzichu.android.mvvm.di.ActivityScoped
 import com.zhuzichu.android.mvvmsimple.ActivityMain
 import com.zhuzichu.android.mvvmsimple.ui.category.module.ModuleCategory
-import com.zhuzichu.android.mvvmsimple.ui.demo.module.ModuleDemo
+import com.zhuzichu.android.mvvmsimple.ui.demo.fresco.module.ModuleFresco
+import com.zhuzichu.android.mvvmsimple.ui.demo.main.module.ModuleDemo
+import com.zhuzichu.android.mvvmsimple.ui.demo.navigation.module.ModuleNavigation
 import com.zhuzichu.android.mvvmsimple.ui.detail.activity.ActivityDetail
 import com.zhuzichu.android.mvvmsimple.ui.detail.module.ModuleDetail
 import com.zhuzichu.android.mvvmsimple.ui.home.module.ModuleHome
@@ -27,7 +29,9 @@ abstract class ActivityBindingModule {
             ModuleMe::class,
             ModuleDemo::class,
             ModuleDetail::class,
-            ModuleTheme::class
+            ModuleTheme::class,
+            ModuleNavigation::class,
+            ModuleFresco::class
         ]
     )
     internal abstract fun mainActivity(): ActivityMain

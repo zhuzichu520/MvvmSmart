@@ -3,8 +3,7 @@ package com.zhuzichu.android.shared.base
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import androidx.fragment.app.FragmentStatePagerAdapter
-import com.zhuzichu.android.shared.extension.toStringByResId
+import com.zhuzichu.android.shared.ext.toStringByResId
 
 class DefaultIntFragmentPagerAdapter(
     fm: FragmentManager,

@@ -102,12 +102,20 @@ abstract class BaseFragment<TBinding : ViewDataBinding, TViewModel : BaseViewMod
 
     private fun registUIChangeLiveDataCallback() {
 
-        viewModel.uc.onStartEvent.observe(viewLifecycleOwner, Observer {
-            navController.navigate(
-                it.actionId,
-                bundleOf(KEY_ARG to it.arg),
-                getDefaultNavOptions(it.destinationId, it.inclusive, it.singleTop, it.animBuilder)
-            )
+        viewModel.uc.onStartEvent.observe(viewLifecycleOwner, Observer { payload ->
+            navController.currentDestination?.getAction(payload.actionId)?.let {
+                navController.navigate(
+                    payload.actionId,
+                    bundleOf(KEY_ARG to payload.arg),
+                    getDefaultNavOptions(
+                        it.destinationId,
+                        payload.inclusive,
+                        payload.singleTop,
+                        payload.animBuilder
+                    )
+                )
+            }
+
         })
 
         viewModel.uc.onBackPressedEvent.observe(viewLifecycleOwner, Observer {

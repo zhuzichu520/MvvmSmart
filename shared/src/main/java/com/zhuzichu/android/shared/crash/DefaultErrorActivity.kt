@@ -20,7 +20,7 @@ import com.tbruyelle.rxpermissions2.RxPermissions
 import com.uber.autodispose.android.lifecycle.autoDispose
 import com.zhuzichu.android.libs.tool.getFileByPath
 import com.zhuzichu.android.shared.R
-import com.zhuzichu.android.shared.extension.toast
+import com.zhuzichu.android.shared.ext.toast
 import com.zhuzichu.android.shared.global.CacheGlobal
 import com.zhuzichu.android.shared.tools.OpenAnyFileTool
 

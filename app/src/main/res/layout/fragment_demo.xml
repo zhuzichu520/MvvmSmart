@@ -5,7 +5,7 @@
 
         <variable
             name="viewModel"
-            type="com.zhuzichu.android.mvvmsimple.ui.demo.viewmodel.ViewModelDemo" />
+            type="com.zhuzichu.android.mvvmsimple.ui.demo.main.viewmodel.ViewModelDemo" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -23,90 +23,16 @@
             app:toolbarTitle="@string/demo"
             app:toolbarTitleTextAppearance="?attr/textAppearanceHeadline6" />
 
-        <ScrollView
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            app:itemBinding="@{viewModel.itemBinding}"
+            app:items="@{viewModel.items}"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:spanCount="2" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginEnd="15dp"
-                    android:text="Fragment跳转"
-                    app:onClickCommand="@{viewModel.onStartFragmentEvent}" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginEnd="15dp"
-                    android:text="Activity跳转"
-                    app:onClickCommand="@{viewModel.onStartActivityEvent}" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginEnd="15dp"
-                    android:text="DialogFragment跳转"
-                    app:onClickCommand="@{viewModel.onStartDialogFragmentEvent}" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginEnd="15dp"
-                    android:text="DialogBottomFragment跳转"
-                    app:onClickCommand="@{viewModel.onStartDialogBottomFragmentEvent}" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginEnd="15dp"
-                    android:text="DeepLink之通知跳转"
-                    app:onClickCommand="@{viewModel.onStartDeepLinkEvent}" />
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:autoLink="all"
-                    android:gravity="center"
-                    android:padding="15dp"
-                    android:text="@{viewModel.text}"
-                    tools:text='https://www.zhuzichu.com/content/' />
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginEnd="15dp"
-                    android:text="跳转无动画"
-                    app:onClickCommand="@{viewModel.onAnimNoEvent}" />
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginEnd="15dp"
-                    android:text="跳转水平动画"
-                    app:onClickCommand="@{viewModel.onAnimHorizontalEvent}" />
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginEnd="15dp"
-                    android:text="跳转垂直动画"
-                    app:onClickCommand="@{viewModel.onAnimVerticalEvent}" />
-            </LinearLayout>
-        </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

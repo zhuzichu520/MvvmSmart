@@ -20,4 +20,6 @@
     <string name="cat_choose_theme_dark">Dark</string>
     <string name="cat_choose_theme_default">System default</string>
 
+    <string name="demo_navigation">Jetpack之Navigation封装</string>
+    <string name="demo_fresco">Fresco基本用法</string>
 </resources>

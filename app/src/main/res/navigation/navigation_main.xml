@@ -12,20 +12,11 @@
         android:label="FragmentMain"
         tools:layout="@layout/fragment_main">
         <action
-            android:id="@+id/action_fragmentMain_to_fragmentDetail"
-            app:destination="@id/fragmentDetail" />
+            android:id="@+id/action_fragmentMain_to_fragmentNavigation"
+            app:destination="@id/fragmentNavigation" />
         <action
-            android:id="@+id/action_fragmentMain_to_activityDetail"
-            app:destination="@id/activityDetail" />
-        <action
-            android:id="@+id/action_fragmentMain_to_dialogFragmentDetail"
-            app:destination="@id/dialogFragmentDetail" />
-        <action
-            android:id="@+id/action_fragmentMain_to_dialogBottomFragmentDetail"
-            app:destination="@id/dialogBottomFragmentDetail" />
-        <action
-            android:id="@+id/action_fragmentMain_to_dialogFragmentChooseTheme"
-            app:destination="@id/dialogFragmentChooseTheme" />
+            android:id="@+id/action_fragmentMain_to_fragmentFresco"
+            app:destination="@id/fragmentFresco" />
     </fragment>
     <fragment
         android:id="@+id/fragmentDetail"
@@ -55,4 +46,28 @@
         android:id="@+id/dialogFragmentChooseTheme"
         android:name="com.zhuzichu.android.mvvmsimple.ui.theme.fragment.DialogFragmentChooseTheme"
         android:label="DialogFragmentChooseTheme" />
+    <fragment
+        android:id="@+id/fragmentNavigation"
+        android:name="com.zhuzichu.android.mvvmsimple.ui.demo.navigation.fragment.FragmentNavigation"
+        android:label="FragmentNavigation">
+        <action
+            android:id="@+id/action_fragmentNavigation_to_dialogFragmentChooseTheme"
+            app:destination="@id/dialogFragmentChooseTheme" />
+        <action
+            android:id="@+id/action_fragmentNavigation_to_dialogBottomFragmentDetail"
+            app:destination="@id/dialogBottomFragmentDetail" />
+        <action
+            android:id="@+id/action_fragmentNavigation_to_dialogFragmentDetail"
+            app:destination="@id/dialogFragmentDetail" />
+        <action
+            android:id="@+id/action_fragmentNavigation_to_fragmentDetail"
+            app:destination="@id/fragmentDetail" />
+        <action
+            android:id="@+id/action_fragmentNavigation_to_activityDetail"
+            app:destination="@id/activityDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentFresco"
+        android:name="com.zhuzichu.android.mvvmsimple.ui.demo.fresco.fragment.FragmentFresco"
+        android:label="FragmentFresco" />
 </navigation>

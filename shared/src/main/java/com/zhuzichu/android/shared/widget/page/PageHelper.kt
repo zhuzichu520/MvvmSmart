@@ -7,10 +7,10 @@ import com.zhuzichu.android.mvvm.base.BaseViewModel
 import com.zhuzichu.android.shared.BR
 import com.zhuzichu.android.shared.R
 import com.zhuzichu.android.shared.entity.BeanPage
-import com.zhuzichu.android.shared.extension.createCommand
-import com.zhuzichu.android.shared.extension.createTypeCommand
-import com.zhuzichu.android.shared.extension.map
-import com.zhuzichu.android.shared.extension.toast
+import com.zhuzichu.android.shared.ext.createCommand
+import com.zhuzichu.android.shared.ext.createTypeCommand
+import com.zhuzichu.android.shared.ext.map
+import com.zhuzichu.android.shared.ext.toast
 import me.tatarka.bindingcollectionadapter2.collections.DiffObservableList
 import me.tatarka.bindingcollectionadapter2.collections.MergeObservableList
 import me.tatarka.bindingcollectionadapter2.itembindings.OnItemBindClass
