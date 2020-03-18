@@ -58,6 +58,7 @@ dependencies {
 
     kapt(Dep.kaptDaggerCompiler)
     kapt(Dep.kaptDaggerProcessor)
+    kapt(Dep.kaptRxhttp)
     api(Dep.daggerAndroid)
     api(Dep.daggerAndroidSupport)
     api(Dep.kotlinStadlibJdk8)
@@ -79,6 +80,7 @@ dependencies {
     api(Dep.rxandroid)
     api(Dep.rxbinding)
     api(Dep.rxjava2)
+    api(Dep.rxhttp)
     api(Dep.autodispose)
     api(Dep.autodisposeArchcomponents)
     api(Dep.autodisposeAndroid)

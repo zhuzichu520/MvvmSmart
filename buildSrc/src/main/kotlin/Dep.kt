@@ -15,7 +15,8 @@ object Dep {
         const val okhttp = "3.12.0"
         const val rxjava = "2.2.12"
         const val rxandroid = "2.1.1"
-        const val rxbinding = "3.0.0"
+        const val rxbinding = "3.1.0"
+        const val rxhttp = "1.4.4"
         const val autodispose = "1.4.0"
         const val adapter = "3.1.1"
         const val timber = "4.7.1"
@@ -50,6 +51,10 @@ object Dep {
         const val fastJson = "1.1.60.android"
         const val fresco = "2.1.0"
     }
+
+    const val rxhttp = "com.rxjava.rxhttp:rxhttp:${Version.rxhttp}"
+
+    const val kaptRxhttp = "com.rxjava.rxhttp:rxhttp-compiler:${Version.rxhttp}"
 
     const val fresco =
         "com.facebook.fresco:fresco:${Version.fresco}"

@@ -1,36 +1,14 @@
 package com.zhuzichu.android.shared.ext
 
-import com.zhuzichu.android.mvvm.base.BaseArg
 import com.zhuzichu.android.mvvm.base.BaseViewModel
 import com.zhuzichu.android.shared.http.exception.ExceptionManager.handleException
-import io.reactivex.BackpressureStrategy
-import io.reactivex.Flowable
-import io.reactivex.FlowableEmitter
-import io.reactivex.FlowableTransformer
+import io.reactivex.*
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.functions.Function
 import io.reactivex.schedulers.Schedulers
 
-private class ErrorResponseFunc<T> : Function<Throwable, Flowable<T>> {
-    override fun apply(t: Throwable): Flowable<T> {
-        return Flowable.error(handleException(t))
-    }
-}
-
-fun <T> schedulersTransformer(): FlowableTransformer<T, T> =
-    FlowableTransformer { observable ->
-        observable.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
-    }
-
-
-fun <T> exceptionTransformer(): FlowableTransformer<T, T> =
-    FlowableTransformer { observable ->
-        observable.onErrorResumeNext(ErrorResponseFunc<T>())
-    }
-
-
 fun <T> Flowable<T>.autoLoading(
-    viewModel: BaseViewModel<BaseArg>,
+    viewModel: BaseViewModel<*>,
     execute: (() -> Boolean)? = null
 ): Flowable<T> =
     if (execute?.invoke() != false)
@@ -43,10 +21,41 @@ fun <T> Flowable<T>.autoLoading(
             it
         }
 
+fun <T> Observable<T>.autoLoading(
+    viewModel: BaseViewModel<*>,
+    execute: (() -> Boolean)? = null
+): Observable<T> =
+    if (execute?.invoke() != false)
+        this.compose<T> {
+            it.doOnSubscribe { viewModel.showLoading() }
+                .doFinally { viewModel.hideLoading() }
+        }
+    else
+        this.compose<T> {
+            it
+        }
+
+
+private class ErrorFlowableResponseFunc<T> : Function<Throwable, Flowable<T>> {
+    override fun apply(t: Throwable): Flowable<T> {
+        return Flowable.error(handleException(t))
+    }
+}
+
+private class ErrorObservableResponseFunc<T> : Function<Throwable, Observable<T>> {
+    override fun apply(t: Throwable): Observable<T> {
+        return Observable.error(handleException(t))
+    }
+}
 
 fun <T> Flowable<T>.bindToException(): Flowable<T> =
     this.compose<T> {
-        it.onErrorResumeNext(ErrorResponseFunc<T>())
+        it.onErrorResumeNext(ErrorFlowableResponseFunc<T>())
+    }
+
+fun <T> Observable<T>.bindToException(): Observable<T> =
+    this.compose<T> {
+        it.onErrorResumeNext(ErrorObservableResponseFunc<T>())
     }
 
 
@@ -55,6 +64,10 @@ fun <T> Flowable<T>.bindToSchedulers(): Flowable<T> =
         it.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
     }
 
+fun <T> Observable<T>.bindToSchedulers(): Observable<T> =
+    this.compose<T> {
+        it.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
+    }
 
 fun <T> createFlowable(
     mode: BackpressureStrategy = BackpressureStrategy.ERROR,
@@ -63,3 +76,10 @@ fun <T> createFlowable(
     Flowable.create({
         closure.invoke(it)
     }, mode)
+
+fun <T> createObservable(
+    closure: ObservableEmitter<T>.() -> Unit
+): Observable<T> =
+    Observable.create {
+        closure.invoke(it)
+    }

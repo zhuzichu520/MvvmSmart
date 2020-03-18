@@ -162,3 +162,6 @@
     *;
 }
 -dontwarn com.just.agentweb.**
+
+#rxhttp
+-keep class rxhttp.**{*;}

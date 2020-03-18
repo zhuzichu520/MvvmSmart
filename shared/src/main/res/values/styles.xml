@@ -3,6 +3,7 @@
 
     <!--Components-->
 
+
     <!--Bottom Sheets-->
     <style name="ThemeOverlay.MyTheme.BottomSheetDialog" parent="ThemeOverlay.MaterialComponents.Dialog">
         <item name="android:windowIsFloating">false</item>
@@ -24,4 +25,11 @@
     <style name="Widget.MyTheme.NavigationView" parent="Widget.MaterialComponents.NavigationView">
         <item name="itemTextAppearance">?textAppearanceBody2</item>
     </style>
+
+    <!--Navigation Drawer-->
+    <style name="Widget.MyTheme.Toolbar" parent="Widget.MaterialComponents.Toolbar.Surface">
+
+    </style>
+
+
 </resources>

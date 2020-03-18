@@ -94,5 +94,6 @@ dependencies {
     api(project(path = ":shared"))
     kapt(Dep.kaptDaggerCompiler)
     kapt(Dep.kaptDaggerProcessor)
+    kapt(Dep.kaptRxhttp)
     debugImplementation("com.squareup.leakcanary:leakcanary-android:2.0-beta-3")
 }
