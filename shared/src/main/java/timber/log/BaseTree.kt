@@ -2,11 +2,6 @@ package timber.log
 
 import com.zhuzichu.android.shared.log.lumberjack.data.StackData
 
-
-/**
- * Created by flisar on 17.01.2019.
- */
-
 abstract class BaseTree : Timber.Tree() {
 
     companion object {

@@ -6,14 +6,14 @@ import com.zhuzichu.android.libs.tool.encodeBase64
 import com.zhuzichu.android.libs.tool.object2Json
 import com.zhuzichu.android.mvvm.Mvvm
 import com.zhuzichu.android.mvvm.base.BaseViewModel
-import com.zhuzichu.android.mvvm.base.DefaultArg
+import com.zhuzichu.android.mvvm.base.ArgDefault
 import com.zhuzichu.android.mvvm.event.SingleLiveEvent
 import com.zhuzichu.android.mvvmsimple.R
 import com.zhuzichu.android.mvvmsimple.ui.detail.arg.ArgText
 import com.zhuzichu.android.shared.ext.createCommand
 import javax.inject.Inject
 
-class ViewModelNavigation @Inject constructor() : BaseViewModel<DefaultArg>() {
+class ViewModelNavigation @Inject constructor() : BaseViewModel<ArgDefault>() {
 
     val onClickDeepLinkEvent = SingleLiveEvent<Unit>()
 

@@ -84,14 +84,14 @@ abstract class BaseFragment<TBinding : ViewDataBinding, TViewModel : BaseViewMod
         val argClass = if (type is ParameterizedType) {
             type.actualTypeArguments[2]
         } else {
-            DefaultArg::class.java
+            ArgDefault::class.java
         }
 
         val argJson = arguments?.getString(KEY_ARG_JSON)
         arg = if (argJson.isNullOrEmpty()) {
-            (arguments?.get(KEY_ARG) ?: DefaultArg()).toCast()
+            (arguments?.get(KEY_ARG) ?: ArgDefault()).toCast()
         } else {
-            json2Object(decodeBase64(argJson), argClass) ?: DefaultArg().toCast()
+            json2Object(decodeBase64(argJson), argClass) ?: ArgDefault().toCast()
         }
         viewModel = ViewModelProvider(this, viewModelFactory).get(modelClass.toCast())
         viewModel.arg = arg

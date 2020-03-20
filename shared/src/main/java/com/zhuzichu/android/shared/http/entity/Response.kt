@@ -1,8 +1,8 @@
-package com.zhuzichu.android.shared.entity
+package com.zhuzichu.android.shared.http.entity
 
 import com.google.gson.annotations.SerializedName
 
-data class BeanBase<T>(
+data class Response<T>(
     @SerializedName("data")
     var `data`: T? = null,
     @SerializedName("errorCode")

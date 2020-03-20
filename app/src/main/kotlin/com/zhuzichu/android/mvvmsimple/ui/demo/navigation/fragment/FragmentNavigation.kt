@@ -4,7 +4,7 @@ import androidx.core.os.bundleOf
 import androidx.lifecycle.Observer
 import com.zhuzichu.android.mvvm.Mvvm
 import com.zhuzichu.android.mvvm.base.BaseFragment
-import com.zhuzichu.android.mvvm.base.DefaultArg
+import com.zhuzichu.android.mvvm.base.ArgDefault
 import com.zhuzichu.android.mvvmsimple.BR
 import com.zhuzichu.android.mvvmsimple.R
 import com.zhuzichu.android.mvvmsimple.databinding.FragmentNavigationBinding
@@ -14,7 +14,7 @@ import com.zhuzichu.android.widget.notify.NotifyManager
 import javax.inject.Inject
 
 class FragmentNavigation :
-    BaseFragment<FragmentNavigationBinding, ViewModelNavigation, DefaultArg>() {
+    BaseFragment<FragmentNavigationBinding, ViewModelNavigation, ArgDefault>() {
 
     @Inject
     lateinit var notifyManager: NotifyManager

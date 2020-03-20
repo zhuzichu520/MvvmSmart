@@ -2,7 +2,6 @@ package com.zhuzichu.android.shared.http.exception
 
 import android.util.MalformedJsonException
 import com.google.gson.JsonParseException
-import com.zhuzichu.android.shared.entity.BeanBase
 import org.json.JSONException
 import retrofit2.HttpException
 import java.net.ConnectException
@@ -64,14 +63,6 @@ object ExceptionManager {
         } else {
             ex = ResponseThrowable(UNKNOWN, "未知错误")
             return ex
-        }
-    }
-
-    fun verify(beanBase: BeanBase<*>?) {
-        beanBase ?: throw ResponseThrowable(PARSE_ERROR, "解析错误")
-        val code = beanBase.errorCode
-        if (code != 0) {
-            throw ResponseThrowable(beanBase.errorCode ?: UNKNOWN, beanBase.errorMsg ?: "未知错误")
         }
     }
 

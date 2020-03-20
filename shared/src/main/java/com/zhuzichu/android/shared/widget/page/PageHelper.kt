@@ -6,7 +6,7 @@ import com.zhuzichu.android.mvvm.base.BaseArg
 import com.zhuzichu.android.mvvm.base.BaseViewModel
 import com.zhuzichu.android.shared.BR
 import com.zhuzichu.android.shared.R
-import com.zhuzichu.android.shared.entity.BeanPage
+import com.zhuzichu.android.shared.http.entity.ResponsePageList
 import com.zhuzichu.android.shared.ext.createCommand
 import com.zhuzichu.android.shared.ext.createTypeCommand
 import com.zhuzichu.android.shared.ext.map
@@ -101,9 +101,9 @@ class PageHelper(
         return networkViewModel.state.value ?: ItemViewModelNetwork.STATE_LOADING
     }
 
-    fun <T> put(beanPage: BeanPage<T>?, closure: T.() -> Any) {
+    fun <T> put(responsePageList: ResponsePageList<T>?, closure: T.() -> Any) {
         hideRefresh()
-        val datas = beanPage?.datas
+        val datas = responsePageList?.datas
         if (datas.isNullOrEmpty()) {
             showEnd()
             return
@@ -111,13 +111,13 @@ class PageHelper(
         val list = datas.map {
             closure.invoke(it)
         }
-        if (beanPage.curPage == 1) {
+        if (responsePageList.curPage == 1) {
             items.update(list)
         } else {
             items.update(items.plus(list))
         }
         MainHandler.postDelayed(100) {
-            if (beanPage.curPage ?: 1 >= beanPage.pageCount ?: 1) {
+            if (responsePageList.curPage ?: 1 >= responsePageList.pageCount ?: 1) {
                 showEnd()
             } else {
                 showFinish()

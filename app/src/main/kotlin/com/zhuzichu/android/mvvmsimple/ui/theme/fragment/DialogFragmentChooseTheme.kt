@@ -13,7 +13,7 @@ import androidx.core.view.MarginLayoutParamsCompat
 import androidx.core.widget.CompoundButtonCompat
 import androidx.lifecycle.Observer
 import com.zhuzichu.android.mvvm.base.BaseDialogBottomFragment
-import com.zhuzichu.android.mvvm.base.DefaultArg
+import com.zhuzichu.android.mvvm.base.ArgDefault
 import com.zhuzichu.android.mvvmsimple.BR
 import com.zhuzichu.android.mvvmsimple.R
 import com.zhuzichu.android.mvvmsimple.databinding.DialogFragmentChooseThemeBinding
@@ -24,7 +24,7 @@ import kotlinx.android.synthetic.main.dialog_fragment_choose_theme.*
 
 
 class DialogFragmentChooseTheme :
-    BaseDialogBottomFragment<DialogFragmentChooseThemeBinding, ViewModelTheme, DefaultArg>(),
+    BaseDialogBottomFragment<DialogFragmentChooseThemeBinding, ViewModelTheme, ArgDefault>(),
     RadioGroup.OnCheckedChangeListener {
 
     override fun bindVariableId(): Int = BR.viewModel

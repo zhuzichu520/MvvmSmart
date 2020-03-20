@@ -2,10 +2,6 @@ package timber.log
 
 import android.util.Log
 
-/**
- * Created by flisar on 17.01.2019.
- */
-
 class ConsoleTree(val appendClickableLink: Boolean = true) : BaseTree() {
 
     companion object {

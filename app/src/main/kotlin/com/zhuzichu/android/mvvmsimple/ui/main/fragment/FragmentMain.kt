@@ -2,8 +2,8 @@ package com.zhuzichu.android.mvvmsimple.ui.main.fragment
 
 import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
+import com.zhuzichu.android.mvvm.base.ArgDefault
 import com.zhuzichu.android.mvvm.base.BaseFragment
-import com.zhuzichu.android.mvvm.base.DefaultArg
 import com.zhuzichu.android.mvvmsimple.BR
 import com.zhuzichu.android.mvvmsimple.R
 import com.zhuzichu.android.mvvmsimple.databinding.FragmentMainBinding
@@ -17,7 +17,7 @@ import com.zhuzichu.android.shared.ext.setupWithViewPager
 import com.zhuzichu.android.shared.ext.toast
 import kotlinx.android.synthetic.main.fragment_main.*
 
-class FragmentMain : BaseFragment<FragmentMainBinding, ViewModelMain, DefaultArg>() {
+class FragmentMain : BaseFragment<FragmentMainBinding, ViewModelMain, ArgDefault>() {
 
     private val waitTime = 2000L
     private var touchTime: Long = 0

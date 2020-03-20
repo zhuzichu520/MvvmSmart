@@ -43,7 +43,7 @@ abstract class BaseViewModel<TArg : BaseArg> : ViewModel(),
     ) {
         uc.onStartEvent.value = Payload.Start(
             actionId,
-            arg ?: DefaultArg(),
+            arg ?: ArgDefault(),
             animBuilder,
             destinationId,
             inclusive,
