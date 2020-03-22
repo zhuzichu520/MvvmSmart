@@ -15,6 +15,7 @@ interface IBaseCommon {
         arg: BaseArg? = null,
         animBuilder: AnimBuilder? = null,
         destinationId: Int? = null,
+        popUpTo: Int?,
         inclusive: Boolean? = null,
         singleTop: Boolean? = null
     )

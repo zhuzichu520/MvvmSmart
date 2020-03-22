@@ -25,10 +25,11 @@ open class BaseItemViewModel(
         arg: BaseArg?,
         animBuilder: AnimBuilder?,
         destinationId: Int?,
+        popUpTo: Int?,
         inclusive: Boolean?,
         singleTop: Boolean?
     ) {
-        viewModel.start(actionId, arg, animBuilder, destinationId, inclusive, singleTop)
+        viewModel.start(actionId, arg, animBuilder, destinationId, popUpTo, inclusive, singleTop)
     }
 
 }

@@ -38,6 +38,7 @@ abstract class BaseViewModel<TArg : BaseArg> : ViewModel(),
         arg: BaseArg?,
         animBuilder: AnimBuilder?,
         destinationId: Int?,
+        popUpTo: Int?,
         inclusive: Boolean?,
         singleTop: Boolean?
     ) {
@@ -46,6 +47,7 @@ abstract class BaseViewModel<TArg : BaseArg> : ViewModel(),
             arg ?: ArgDefault(),
             animBuilder,
             destinationId,
+            popUpTo,
             inclusive,
             singleTop
         )

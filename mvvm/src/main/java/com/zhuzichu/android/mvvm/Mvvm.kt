@@ -22,14 +22,14 @@ object Mvvm {
     }
 
     internal fun getDefaultNavOptions(
-        destinationId: Int?,
+        popUpTo: Int?,
         inclusive: Boolean?,
         singleTop: Boolean?,
         animBuilder: AnimBuilder?
     ): NavOptions {
         return NavOptions.Builder().apply {
-            if (destinationId != null && inclusive != null) {
-                setPopUpTo(destinationId, inclusive)
+            if (popUpTo != null && inclusive != null) {
+                setPopUpTo(popUpTo, inclusive)
             }
             singleTop?.let {
                 setLaunchSingleTop(singleTop)

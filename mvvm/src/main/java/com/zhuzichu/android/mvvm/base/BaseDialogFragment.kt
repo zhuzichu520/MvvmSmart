@@ -107,7 +107,7 @@ abstract class BaseDialogFragment<TBinding : ViewDataBinding, TViewModel : BaseV
             navController.navigate(
                 it.actionId,
                 bundleOf(KEY_ARG to it.arg),
-                getDefaultNavOptions(it.destinationId, it.inclusive, it.singleTop, it.animBuilder)
+                getDefaultNavOptions(it.popUpTo, it.inclusive, it.singleTop, it.animBuilder)
             )
         })
 
@@ -173,10 +173,11 @@ abstract class BaseDialogFragment<TBinding : ViewDataBinding, TViewModel : BaseV
         arg: BaseArg?,
         animBuilder: AnimBuilder?,
         destinationId: Int?,
+        popUpTo: Int?,
         inclusive: Boolean?,
         singleTop: Boolean?
     ) {
-        viewModel.start(actionId, arg, animBuilder, destinationId, inclusive, singleTop)
+        viewModel.start(actionId, arg, animBuilder, destinationId, popUpTo,inclusive, singleTop)
     }
 
     override fun initArgs(arg: TArg) {

@@ -10,6 +10,14 @@ enum class EncryptType(val type: String) {
     ENC_TYPE_SHA256("SHA-256")
 }
 
+fun md5(value: String?): String {
+    return getEncryptString(value, EncryptType.ENC_TYPE_MD5)
+}
+
+fun sha256(value: String?): String {
+    return getEncryptString(value, EncryptType.ENC_TYPE_SHA256)
+}
+
 /**
  * 获取加密后字符串
  * 默认使用SHA-256

@@ -9,6 +9,7 @@ internal sealed class Payload {
         val arg: BaseArg,
         val animBuilder: AnimBuilder?,
         val destinationId: Int?,
+        val popUpTo: Int?,
         val inclusive: Boolean?,
         val singleTop: Boolean?
     )

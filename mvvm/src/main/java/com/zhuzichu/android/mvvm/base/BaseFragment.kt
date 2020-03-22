@@ -108,7 +108,7 @@ abstract class BaseFragment<TBinding : ViewDataBinding, TViewModel : BaseViewMod
                     payload.actionId,
                     bundleOf(KEY_ARG to payload.arg),
                     getDefaultNavOptions(
-                        it.destinationId,
+                        payload.popUpTo,
                         payload.inclusive,
                         payload.singleTop,
                         payload.animBuilder
@@ -180,10 +180,11 @@ abstract class BaseFragment<TBinding : ViewDataBinding, TViewModel : BaseViewMod
         arg: BaseArg?,
         animBuilder: AnimBuilder?,
         destinationId: Int?,
+        popUpTo: Int?,
         inclusive: Boolean?,
         singleTop: Boolean?
     ) {
-        viewModel.start(actionId, arg, animBuilder, destinationId, inclusive, singleTop)
+        viewModel.start(actionId, arg, animBuilder, destinationId, popUpTo,inclusive, singleTop)
     }
 
     override fun initArgs(arg: TArg) {
