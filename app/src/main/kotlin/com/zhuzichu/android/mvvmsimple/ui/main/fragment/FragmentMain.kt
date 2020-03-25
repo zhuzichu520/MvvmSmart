@@ -13,14 +13,17 @@ import com.zhuzichu.android.mvvmsimple.ui.home.fragment.FragmentHome
 import com.zhuzichu.android.mvvmsimple.ui.main.viewmodel.ViewModelMain
 import com.zhuzichu.android.mvvmsimple.ui.me.fragment.FragmentMe
 import com.zhuzichu.android.shared.base.DefaultIntFragmentPagerAdapter
+import com.zhuzichu.android.shared.ext.plusBadge
 import com.zhuzichu.android.shared.ext.setupWithViewPager
 import com.zhuzichu.android.shared.ext.toast
+import com.zhuzichu.android.widget.badge.Badge
 import kotlinx.android.synthetic.main.fragment_main.*
 
 class FragmentMain : BaseFragment<FragmentMainBinding, ViewModelMain, ArgDefault>() {
 
     private val waitTime = 2000L
     private var touchTime: Long = 0
+    private var badge: Badge? = null
 
     override fun setLayoutId(): Int = R.layout.fragment_main
 
@@ -43,6 +46,8 @@ class FragmentMain : BaseFragment<FragmentMainBinding, ViewModelMain, ArgDefault
 
         content.adapter = DefaultIntFragmentPagerAdapter(childFragmentManager, fragments, titles)
         bottom.setupWithViewPager(content)
+        badge = bottom.plusBadge(0)
+        badge?.badgeNumber = 10
         initBackListener()
     }
 
